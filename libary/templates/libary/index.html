@@ -1,0 +1,35 @@
+{% extends "global/base.html" %} 
+{% block content %}
+  {% if collection %}
+  <h1 class="content-title">Livros</h1>
+
+  <div class="search">
+    <form action="{% url "libary:search" %}" method="GET" class="search-form">
+      <input
+        type="search"
+        class="search-input"
+        placeholder="Busque por um livro."
+        id="search"
+        name="q"
+        value="{{ request.GET.q.strip }}"
+      />
+    </form>
+
+    <a href="{% url "libary:create" %}" class="btn add-book" type="button">Adicionar Livro</a>
+  </div>
+
+  <section class="collection">
+    {% for book in collection %}
+    <a class="book" href="{% url "libary:book" book.id %}">
+      {% if book.picture %}
+        <img src="{{ book.picture.url }}" alt="{{ book.title }}" width="200px" />
+      {% endif %}
+      <p>{{ book.title }}</p>
+    </a>
+    {% endfor %}
+  </section>
+  {% else %}
+  <h1 class="content-title">Nenhum livro encontrado</h1>
+  <a href="{% url "libary:create" %}"class="btn add-book" type="button">Adicionar Livro</a>
+  {% endif %}
+{% endblock content %}

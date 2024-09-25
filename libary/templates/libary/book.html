@@ -1,0 +1,28 @@
+{% extends "global/base.html" %} {% block content %}
+<section class="book-detail">
+    {% if book.picture %}
+        <img src="{{ book.picture.url }}" alt="{{ book.title }}" width="300px" />
+    {% endif %}
+    <div class="book_info">
+        <h1>{{ book.title }}</h1>
+        <p><b>Autor:</b> {{ book.author }}</p>
+        <p><b>Tipo:</b> {{ book.type }}</p>
+        <p><b>Ano de lançamento:</b> {{ book.year }}</p>
+        <p><b>Gênero:</b> {{ book.genre }}</p>
+        <p><b>Livros em Estoque:</b> {{ book.book_count }}</p>
+        {% if book.isbn %}
+        <p><b>ISBN:</b> {{ book.isbn }}</p> 
+        {% endif %}
+        {% if book.description %}
+        <p><b>Descrição: </b>{{ book.description }}</p>
+        {% endif %}
+    </div>
+    <div class='btns'>
+        <a href="{% url "libary:update" book.id %}" class="btn btn-edit" type="button">Editar</a>
+        <form action="{% url "libary:delete" book.id %}" method="POST">
+            {% csrf_token %}
+            <button class="btn btn-delete" type="submit">Deletar</button>
+        </form>
+    </div>
+</section>
+{% endblock content %}

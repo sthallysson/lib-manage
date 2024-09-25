@@ -1,0 +1,18 @@
+<header class="header">
+  <h1 class="logo"><a href="{% url "libary:index" %}">LibManage</a></h1>
+
+  <nav class="menu">
+    <ul class="menu-list">
+      {% if user.is_authenticated %}
+        <li class="menu-item"><a href="{% url "libary:user_read" %}" class="menu-link">Usuários</a></li>
+        <li class="menu-item"><a href="{% url "libary:user_update" %}" class="menu-link">Profile</a></li>
+        {% comment %} <li class="menu-item"><a href="#" class="menu-link">Emprestimo</a></li> {% endcomment %}
+
+        <li class="menu-item"><a href="{% url "libary:logout" %}" class="menu-link">Sair</a></li>
+        {% else %}
+        <li class="menu-item"><a href="{% url "libary:login" %}" class="menu-link">Login</a></li>
+        <li class="menu-item"><a href="{% url "libary:register" %}" class="menu-link">Registrar</a></li>
+        {% endif %}
+    </ul>
+  </nav>
+</header>

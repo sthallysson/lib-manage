@@ -1,0 +1,327 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #eee;
+  padding: 2rem 4rem;
+}
+
+.header .logo {
+  font-size: 2.8rem;
+}
+
+.menu .menu-list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  font-size: 1.6rem;
+}
+
+.menu-list .menu-link {
+  padding: 1rem;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+.menu-list .menu-link:hover {
+  background-color: #555;
+  color: #f00652;
+}
+
+.content {
+  max-width: 1220px;
+  padding: 4rem 1rem;
+  margin: 0 auto;
+}
+
+.content-title {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-block: 2rem;
+}
+
+.search-form {
+  width: 80%;
+}
+.search-input {
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #000;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 15px #333;
+}
+
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: filter 300ms ease-in-out;
+  border: 1px solid #000;
+}
+
+.btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-edit {
+  background-color: #52b788;
+  border: 1px solid #52b788;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.btn-delete {
+  background-color: #f00652;
+  border: 0;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.btn.add-book {
+  color: #fff;
+  background-color: #52b788;
+  border: 1px solid #52b788;
+  font-size: 1.4rem;
+}
+
+.btn:hover {
+  filter: brightness(90%);
+}
+
+.btn:focus,
+.btn:active {
+  filter: brightness(80%);
+  box-shadow: 0 0 5px #000;
+}
+
+.collection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.collection .book {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+  min-width: 250px;
+  max-width: 250px;
+}
+
+.book-detail h1 {
+  font-size: 2.8rem;
+  text-transform: capitalize;
+  margin-top: 1rem;
+}
+
+.book-detail p {
+  font-size: 1.6rem;
+}
+
+/* Estilização geral do formulário */
+.form-addbook {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilização dos grupos de entrada */
+.input-group {
+  margin-bottom: 15px;
+}
+
+/* Estilização dos labels */
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Estilização dos inputs e select */
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+/* Estilo especial para textarea */
+.input-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: #6200ee;
+  box-shadow: 0 0 5px rgba(98, 0, 238, 0.2);
+}
+
+ .btn.create-book {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  background-color: #52b788;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.input-group input[type="file"] {
+  padding: 5px;
+}
+
+.input-group input[type="number"] {
+  appearance: textfield;
+}
+
+.input-group input[type="number"]::-webkit-outer-spin-button,
+.input-group input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.help-text{
+  color: #f00652;
+}
+.help-text + ul,
+.errorlist {
+  margin-top: 0.5rem;
+  list-style: none;
+  color: #f00652;
+}
+
+.alert {
+  border: #333 solid 1px;
+  padding: 2rem 0;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  margin:4rem auto 0 ;
+  max-width: 600px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.alert.success {
+  background: rgba(0, 255, 0, 0.3);
+  border: 1px solid rgba(0, 255, 0, 90%);
+}
+
+.alert.error {
+  background: rgba(255, 0, 0, 0.3);
+  border: 1px solid rgba(255, 0, 0, 90%);
+}
+
+.alert.warning {
+  background: rgba(255, 255, 0, 0.3);
+  border: 1px solid rgba(255, 255, 0, 90%);
+}
+
+.alert.info {
+  background: rgba(0, 0, 255, 0.3);
+  border: 1px solid rgba(0, 0, 255, 0.3);
+}
+
+.user-loggedin {
+  font-size: 1.6rem;
+}
+
+.user-loggedin a {
+  color: #f00652;
+  font-weight: bold;
+}
+
+.list-users{
+  font-size: 1.6rem;
+}
+
+@media (max-width: 880px) {
+  .header {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  .menu .menu-list {
+    gap: 0;
+  }
+
+  .search {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .btn.add-book,
+  .search-form {
+    width: 100%;
+  }
+
+  .form-addbook {
+    padding: 15px;
+}
+}
+

@@ -1,0 +1,13 @@
+{% extends "global/base.html" %}
+
+
+{% block content %}
+    <h1 class="content-title">Lista de Usuários</h1>
+
+    <ul class="list-users">
+    {% for user in users %}
+        <li>{{user}}</li>
+    {% endfor %}
+    </ul>
+    
+{% endblock content %}

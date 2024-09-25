@@ -1,0 +1,30 @@
+
+<form 
+action="{{form_action}}" 
+method="POST" 
+class="form-addbook" 
+>
+
+{% csrf_token %}
+
+
+{% for field in form %}
+<div class="input-group">
+    <label for="{{field.id_for_label}}">{{field.label}}</label>
+    {{field}} 
+
+    {{field.errors}}
+
+    {% if field.help_text %}
+      <p class="help-text">{{ field.help_text }}</p>
+    {% endif %}
+</div>
+{% endfor %}
+
+{% if user.is_authenticated %}
+    <button type="submit" class="btn create-book ">Cadastrar </button>
+    {% else %}
+    <button type="submit" class="btn create-book ">Entrar</button>
+{% endif %}
+
+</form>

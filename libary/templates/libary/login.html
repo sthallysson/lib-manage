@@ -1,0 +1,13 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+    <h1 class="content-title">Login</h1>
+
+    {% if user.is_authenticated %}
+        <p class='user-loggedin'>Você está logado como {{user.username}}. <a href="{% url "libary:logout" %}">Clique aqui</a> para sair.</p>
+    {% else %}
+        {% include "libary/partials/_user-form.html" %}
+    {% endif %}
+
+    
+{% endblock content %}

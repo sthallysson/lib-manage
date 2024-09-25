@@ -1,0 +1,29 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+    <h1 class="content-title">Adicionar Livro</h1>
+
+    <form 
+        action="{{form_action}}" 
+        method="POST" 
+        class="form-addbook" 
+        enctype="multipart/form-data"
+    >
+
+        {% csrf_token %}
+
+
+        {% for field in form %}
+        <div class="input-group">
+            <label for="{{field.id_for_label}}">{{field.label}}</label>
+            {{field}} 
+
+            {{field.errors}}
+        </div>
+        {% endfor %}
+
+        <button type="submit" class="btn create-book ">Adicionar Livro</button>
+
+    </form>
+    
+{% endblock content %}
